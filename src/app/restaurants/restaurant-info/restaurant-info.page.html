@@ -1,0 +1,83 @@
+<body onload="load()">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title >{{restaurantInfo?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>{{restaurantInfo?.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <ion-text>Address:</ion-text>
+            <br>
+            <ion-text>{{restaurantInfo?.address.streetAddress}}</ion-text>
+            <br>
+            <ion-text>{{restaurantInfo?.address.postalCode}} {{restaurantInfo?.address.city}}, {{restaurantInfo?.address.country}} </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text>Rating Value: {{restaurantInfo?.aggregateRating.ratingValue}}</ion-text>
+            <br>
+            <ion-text>Review Count: {{restaurantInfo?.aggregateRating.reviewCount}}</ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text>Serves Cuisine:</ion-text>
+            <br>
+            <ion-text>{{restaurantInfo?.servesCuisine}}</ion-text>
+            <br>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text>Opening Hours:</ion-text>
+            <br>
+            <ion-text>
+              <ion-grid>
+                <ion-row *ngFor="let openingHours of restaurantInfo?.openingHours|keyvalue:dayOrder">
+                  <ion-col>{{openingHours.key}}</ion-col>
+                  <ion-col>{{openingHours.value}}</ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text>Telephone:</ion-text>
+            <br>
+            <ion-text>{{restaurantInfo?.telephone}}<br></ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text>Link:</ion-text>
+            <br>
+            <a target="_blank" href="{{restaurantInfo?.url}}">{{restaurantInfo?.url}}</a>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-text></ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+</body>
+
+

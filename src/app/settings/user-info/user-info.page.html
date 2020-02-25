@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="back()" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>{{userInfo?.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-text>Age: {{userInfo?.age}}</ion-text>
+      </ion-list>
+      <ion-list>
+        <ion-text>Number of orders: {{userInfo?.ordersCount}}</ion-text>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

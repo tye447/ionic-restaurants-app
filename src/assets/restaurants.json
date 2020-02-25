@@ -1,0 +1,89 @@
+[
+  {
+    "address": {
+      "country": "France",
+      "city": "Lyon",
+      "postalCode": "69003",
+      "streetAddress": "178 Rue Garibaldi"
+    },
+    "aggregateRating": {
+      "ratingValue": "4.6",
+      "reviewCount": "114"
+    },
+    "id": 1,
+    "name": "New China",
+    "openingHours": {
+      "lun.": "12:00–14:30 19:00–22:30",
+      "mar.": "12:00–14:30 19:00–22:30",
+      "mer.": "12:00–14:30 19:00–22:30",
+      "jeu.": "12:00–14:30 19:00–22:30",
+      "ven.": "12:00–14:30 19:00–22:30",
+      "sam.": "12:00–14:30 19:00–22:30",
+      "dim.": " 12:00–14:30 19:00–22:30"
+    },
+    "servesCuisine": [
+      "Asian Food"
+    ],
+    "telephone": "04 78 95 32 00",
+    "url": "http://restaurant-newchina.com",
+    "img": "https://c.tfstatic.com/w_656,h_368,c_fill,g_auto:subject,q_auto,f_auto/restaurant_photos/695/435695/source/new-china-vue-de-la-salle-837ac.jpg"
+  },
+  {
+    "address": {
+      "country": "France",
+      "city": "Lyon",
+      "postalCode": "69003",
+      "streetAddress": "164 Rue Paul Bert"
+    },
+    "aggregateRating": {
+      "ratingValue": "4.7",
+      "reviewCount": "145"
+    },
+    "id": 2,
+    "name": "Bentomania Honten",
+    "openingHours": {
+      "lun.": " 12:00–14:00",
+      "mar.": " 12:00–14:00",
+      "mer.": " 12:00–14:00",
+      "jeu.": " 12:00–14:00 20:00–21:30",
+      "ven.": " 12:00–14:00 20:00–21:30",
+      "sam.": " 20:00–22:00 ",
+      "dim.": " Closed"
+    },
+    "servesCuisine": [
+      "Asian Food"
+    ],
+    "telephone": "04 78 95 32 00",
+    "url": "http://bentomania.fr",
+    "img": "https://c.tfstatic.com/w_656,h_368,c_fill,g_auto:subject,q_auto,f_auto/restaurant_photos/711/302711/source/bentomania-vue-de-la-salle-3b50f.jpg"
+  },
+  {
+    "address": {
+      "country": "France",
+      "city": "Lyon",
+      "postalCode": "69003",
+      "streetAddress": "48 Avenue Félix Faure"
+    },
+    "aggregateRating": {
+      "ratingValue": "4.2",
+      "reviewCount": "526"
+    },
+    "id": 3,
+    "name": "BLe Petit Carron",
+    "openingHours": {
+      "lun.": " 12:00–14:00 19:00-22:00",
+      "mar.": " 12:00–14:00 19:00-22:00",
+      "mer.": " 12:00–14:00 19:00-22:00",
+      "jeu.": " 12:00–14:00 19:00-22:00",
+      "ven.": " 12:00–14:00 19:00-22:00",
+      "sam.": " 19:00-22:00 ",
+      "dim.": " Closed"
+    },
+    "servesCuisine": [
+      "French Food"
+    ],
+    "telephone": "04 78 60 00 57",
+    "url": "lepetitcarron-restaurant.com",
+    "img": "https://c.tfstatic.com/w_656,h_368,c_fill,g_auto:subject,q_auto,f_auto/restaurant_photos/347/5347/source/le-petit-carron-devanture-f0481.jpg"
+  }
+]

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item [routerLink]="['user-info']" [queryParams]="{name: ''}">My Information</ion-item>
+    <ion-item>Service Client</ion-item>
+    <ion-item (click)="logOut()">Log Out</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,33 @@
+<body>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let order of orders">
+    <ion-card-content>
+
+      <ion-list lines="none">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="order?.restaurantIcon"></ion-img>
+          </ion-thumbnail>
+          {{order?.restaurantName}}<br>{{order?.orderDate}}
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-text>{{order?.orderContent}}</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{order?.orderPrice}} €</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+</body>
