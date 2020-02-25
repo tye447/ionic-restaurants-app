@@ -17,10 +17,12 @@
         </ion-item>
         <ion-grid>
           <ion-row>
-            <ion-col>
-              <ion-text>{{order?.orderContent}}</ion-text>
-            </ion-col>
-            <ion-col>
+            <ion-col col-6 style="text-align: left">
+              <ion-row *ngFor="let recipe of order?.orderContent">
+                <ion-text>{{recipe}}</ion-text><br>
+              </ion-row>
+           </ion-col>
+            <ion-col col-3 style="text-align: right">
               <ion-text>{{order?.orderPrice}} €</ion-text>
             </ion-col>
           </ion-row>

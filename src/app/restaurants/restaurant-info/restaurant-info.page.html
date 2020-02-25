@@ -69,6 +69,23 @@
             <a target="_blank" href="{{restaurantInfo?.url}}">{{restaurantInfo?.url}}</a>
           </ion-label>
         </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <ion-text>Recipes</ion-text>
+            <br>
+            <ion-text>
+              <ion-grid>
+                <ion-row *ngFor="let recipe of restaurantInfo?.recipes">
+                  <ion-col col-3 style="text-align: left">{{recipe.name}}</ion-col>
+                  <ion-col col-3 style="text-align: right">{{recipe.price}}</ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </ion-text>
+          </ion-label>
+        </ion-item>
+
         <ion-item>
           <ion-label>
             <ion-text></ion-text>

@@ -1,7 +1,9 @@
 [
   {
     "id": 1,
-    "content": "Filet de Boeuf Sauce Poivre Noir",
+    "content": [
+      "Filet de Boeuf Sauce Poivre Noir"
+    ],
     "restaurantId": 1,
     "userId": 1,
     "price": 27,
@@ -9,7 +11,9 @@
   },
   {
     "id": 2,
-    "content": "Filet de Cabillaud Sauce Saté",
+    "content": [
+      "Filet de Cabillaud Sauce Saté"
+    ],
     "restaurantId": 1,
     "userId": 2,
     "price": 19,
@@ -17,7 +21,9 @@
   },
   {
     "id": 3,
-    "content": "Menu KAISEKI - Hiver 2020",
+    "content": [
+      "Menu KAISEKI - Hiver 2020"
+    ],
     "restaurantId": 2,
     "userId": 1,
     "price": 45,
@@ -25,18 +31,23 @@
   },
   {
     "id": 4,
-    "content": "Rognon de veau entier sauce morilles",
+    "content": [
+      "Rognon de veau entier sauce morilles"
+    ],
     "restaurantId": 3,
     "userId": 2,
     "price": 26.9,
-    "date": "5/11/2019"
+    "date": "05/11/2019"
   },
   {
     "id": 5,
-    "content": "Poisson du marché, sauce curry et ses légumes hivernaux",
+    "content": [
+      "Poisson du marché, sauce curry et ses légumes hivernaux",
+      "Rognon de veau entier sauce morilles"
+    ],
     "restaurantId": 3,
     "userId": 3,
-    "price": 24.9,
+    "price": 51.8,
     "date": "12/01/2020"
   }
 ]
