@@ -21,6 +21,7 @@ export class RestaurantsPage implements OnInit {
   resultTest: any;
   resultLocation: any;
   constructor(private restaurantsService: RestaurantsService) {
+      this.inputAddress = 'Part-Dieu';
   }
   ngOnInit() {
   }
@@ -97,5 +98,8 @@ export class RestaurantsPage implements OnInit {
   }
   loadAllRestaurants() {
     this.restaurants = JSON.parse(window.sessionStorage.getItem('allRestaurants'));
+  }
+  order = (a, b) => {
+      if (a.name < b.name) { return b.name; }
   }
 }
