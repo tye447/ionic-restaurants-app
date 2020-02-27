@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class RestaurantsService {
   baseUrlPlaceDetail = 'https://maps.googleapis.com/maps/api/place/details/json';
   fields = 'name';
   baseUrlLocation = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json';
-  constructor(private http: HttpClient, private params1: HttpParams, private params2: HttpParams) {}
+  constructor(private http: HttpClient) {}
   getLocation(search: string) {
     const urlLocation: string = this.corsUrl + this.baseUrlLocation;
     const urlTest = new URL(urlLocation);
