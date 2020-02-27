@@ -3,9 +3,18 @@
   <ion-toolbar>
     <ion-title>Restaurants</ion-title>
   </ion-toolbar>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label color="primary" stacked>Place</ion-label>
+      <ion-input [(ngModel)]="inputAddress" placeholder="ex: Part-Dieu, 12 rue Republique, ..."></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-button (click)="search(inputAddress)">Search</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-header>
 
-<ion-content>
+<!--ion-content>
   <ion-card *ngFor="let item of restaurants" [routerLink]="['restaurant-info']" [queryParams]="{name:item.name,streetAddress:item.address.streetAddress}">
     <ion-card-content>
       <ion-img [src]="item.img"></ion-img>
@@ -18,5 +27,19 @@
     </ion-card-content>
   </ion-card>
   <ion-item></ion-item>
+</ion-content-->
+
+<ion-content>
+
+  <ion-card *ngFor="let item of restaurants" [routerLink]="['restaurant-info']" [queryParams]="{name:item.name,formatted_address:item.formatted_address}">
+    <ion-card-content>
+      <ion-img [src]="item.img"></ion-img>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-text>{{item.name}}<br><br>{{item.formatted_address}}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-item></ion-item>
 </ion-content>
-</body>

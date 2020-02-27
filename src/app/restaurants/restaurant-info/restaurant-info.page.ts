@@ -13,20 +13,20 @@ export class RestaurantInfoPage implements OnInit {
   constructor(public route: ActivatedRoute) {}
   ngOnInit() {
     this.checkSessionRestaurantsData();
-    this.loadRestaurantsData();
     this.route.queryParams.subscribe( val => {
       this.searchRestaurantData(val);
     });
   }
   checkSessionRestaurantsData() {
-    this.allRestaurants = sessionStorage.getItem('allRestaurants');
+    this.allRestaurants = sessionStorage.getItem('allRes');
+    // this.allRestaurants = sessionStorage.getItem('allRestaurants');
     this.restaurants = JSON.parse(this.allRestaurants);
   }
-  loadRestaurantsData() {
+  /*loadRestaurantsData() {
     if (this.restaurants == null) {
       this.read_data('./assets/restaurants.json');
     }
-  }
+  }*/
   searchRestaurantData(param: any) {
     this.read_data_param_storage(this.restaurants, param);
   }
@@ -41,7 +41,7 @@ export class RestaurantInfoPage implements OnInit {
   read_data_param_storage(resourcesData: any, param: any) {
     this.restaurantInfo = resourcesData
         .filter(c => c.name === param.name)
-        .filter(c => c.address.streetAddress === param.streetAddress)[0];
+        .filter(c => c.formatted_address === param.formatted_address)[0];
   }
   dayOrder = (a, b) => {
     if (a.key < b.key) { return b.key; }
