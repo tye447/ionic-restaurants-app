@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RestaurantsService} from '../services/restaurants.service';
+import {RestaurantsService} from '../services/restaurants/restaurants.service';
 interface Test {
   formatted_address: string;
   formatted_phone_number: string;

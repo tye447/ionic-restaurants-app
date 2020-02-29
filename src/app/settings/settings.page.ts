@@ -8,8 +8,12 @@ import {AlertController} from '@ionic/angular';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
+  userInfo: any;
   constructor(private router: Router, public alertController: AlertController) { }
   ngOnInit() {
+  }
+  ionViewWillEnter(){
+    this.userInfo = JSON.parse(window.sessionStorage.getItem('currentUser'));
   }
   async logOutAlert() {
     const alert = await this.alertController.create({
@@ -30,5 +34,4 @@ export class SettingsPage implements OnInit {
   logOut() {
     this.logOutAlert().then();
   }
-
 }

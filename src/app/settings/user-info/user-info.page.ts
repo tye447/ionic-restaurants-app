@@ -9,8 +9,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class UserInfoPage implements OnInit {
   userInfo: any;
   constructor(public route: ActivatedRoute, private router: Router) {}
-  ngOnInit() {
+  ionViewWillEnter(){
     this.userInfo = JSON.parse(sessionStorage.getItem('currentUser'));
+  }
+  ngOnInit() {
   }
   dayOrder = (a, b) => {
     if (a.key < b.key) { return b.key; }

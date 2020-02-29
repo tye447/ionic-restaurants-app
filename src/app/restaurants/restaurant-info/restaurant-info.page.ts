@@ -9,37 +9,17 @@ import {ActivatedRoute} from '@angular/router';
 export class RestaurantInfoPage implements OnInit {
   restaurantInfo: any;
   restaurants: any;
-  allRestaurants: any;
   constructor(public route: ActivatedRoute) {}
   ngOnInit() {
-    this.checkSessionRestaurantsData();
-    this.route.queryParams.subscribe( val => {
-      this.searchRestaurantData(val);
+    // this.allRestaurants = window.sessionStorage.getItem('allRes');
+    // this.allRestaurants = sessionStorage.getItem('allRestaurants');
+    this.restaurants = JSON.parse(window.sessionStorage.getItem('allRes'));
+    this.route.queryParams.subscribe( params => {
+      this.getRestaurantInfo(this.restaurants, params);
     });
   }
-  checkSessionRestaurantsData() {
-    this.allRestaurants = sessionStorage.getItem('allRes');
-    // this.allRestaurants = sessionStorage.getItem('allRestaurants');
-    this.restaurants = JSON.parse(this.allRestaurants);
-  }
-  /*loadRestaurantsData() {
-    if (this.restaurants == null) {
-      this.read_data('./assets/restaurants.json');
-    }
-  }*/
-  searchRestaurantData(param: any) {
-    this.read_data_param_storage(this.restaurants, param);
-  }
-  read_data(url: string){
-    fetch(url)
-        .then(r => r.json())
-        .then(json => {
-          this.restaurants = json;
-          sessionStorage.setItem('allRestaurants', JSON.stringify(json));
-        });
-  }
-  read_data_param_storage(resourcesData: any, param: any) {
-    this.restaurantInfo = resourcesData
+  getRestaurantInfo(restaurants: any, param: any) {
+    this.restaurantInfo = restaurants
         .filter(c => c.name === param.name)
         .filter(c => c.formatted_address === param.formatted_address)[0];
   }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,4 +46,16 @@ export class RestaurantsService {
     urlTest.search = new URLSearchParams(test).toString();
     return this.http.get('' + urlTest).pipe();
   }
+  getAllRestaurantJSON(url: string): Observable<any[]> {
+    return this.http.get<any[]>(url).pipe();
+    /*this.http.get('' + url).subscribe(res => {
+      window.sessionStorage.setItem('allRestaurants', JSON.stringify(res));
+    });*/
+    // return JSON.parse(window.sessionStorage.getItem('allRestaurants'));
+  }
+  /*await fetch('./assets/restaurants.json')
+        .then(r => r.json())
+        .then(json => {
+          window.sessionStorage.setItem('allRestaurants', JSON.stringify(json));
+        });*/
 }

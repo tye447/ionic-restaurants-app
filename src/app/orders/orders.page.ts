@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 interface OrderRestaurant {
   orderId: number;
   restaurantName: string;
-  orderContent: string;
-  orderPrice: number;
+  recipes: any[];
+  recipesCount: number;
+  orderPriceTotal: number;
   orderDate: string;
   restaurantIcon: string;
 }
@@ -24,21 +25,37 @@ export class OrdersPage implements OnInit {
   }
   loadOrdersCurrentUser() {
     this.orders = [];
-    let orderSingle: OrderRestaurant = {orderId: 0, restaurantName: '', orderContent: '', orderPrice: 0, orderDate: '', restaurantIcon: ''};
-    let ordersCurrentUser: any[];
-    let restaurants = [];
-    ordersCurrentUser = JSON.parse(window.sessionStorage.getItem('ordersCurrentUser'));
-    restaurants = JSON.parse(window.sessionStorage.getItem('allRestaurants'));
-    ordersCurrentUser.forEach(item => {
-      orderSingle = {orderId: 0, restaurantName: '', orderContent: '', orderPrice: 0, orderDate: '', restaurantIcon: ''};
-      orderSingle.orderId = item.id;
-      orderSingle.orderContent = item.content;
-      orderSingle.restaurantName = restaurants.filter(restaurant => restaurant.id === parseInt(item.restaurantId, 10))[0].name;
-      orderSingle.restaurantIcon = restaurants.filter(restaurant => restaurant.id === parseInt(item.restaurantId, 10))[0].img;
-      orderSingle.orderPrice = item.price;
-      orderSingle.orderDate = item.date;
+    let orderSingle: OrderRestaurant = {
+      orderId: 0, restaurantName: '', recipes: [],
+      recipesCount: 0, orderPriceTotal: 0, orderDate: '', restaurantIcon: ''
+    };
+    const ordersCurrentUser: any[] = JSON.parse(window.sessionStorage.getItem('ordersCurrentUser'));
+    const restaurants: any[] = JSON.parse(window.sessionStorage.getItem('allRestaurants'));
+    ordersCurrentUser.forEach(order => {
+      orderSingle = {
+        orderId: 0, restaurantName: '', recipes: [], recipesCount: 0,
+        orderPriceTotal: 0, orderDate: '', restaurantIcon: ''
+      };
+      orderSingle.orderId = order.id;
+      const restaurantOrder = restaurants.filter(restaurant => restaurant.id === parseInt(order.restaurantId, 10))[0]
+      orderSingle.restaurantName = restaurantOrder.name;
+      orderSingle.restaurantIcon = restaurantOrder.img;
+      const recipes: any[] = restaurantOrder.recipes;
+      const recipes2 = recipes.filter(recipe => recipe.id === parseInt(order.recipeId[0], 10))[0];
+      orderSingle.recipes = this.setRecipes(order, recipes, orderSingle);
+      orderSingle.recipesCount = order.recipeId.length;
+      orderSingle.orderDate = order.date;
       this.orders.push(orderSingle);
     });
+    window.sessionStorage.setItem('ordersCurrentUserTrans', JSON.stringify(this.orders));
   }
-
+  setRecipes(order: any, recipes: any[], orderSingle: any) {
+    const test: any[] = [];
+    order.recipeId.forEach(rid => {
+      const recipeSingle = recipes.filter(recipe => recipe.id === parseInt(rid, 10))[0];
+      orderSingle.orderPriceTotal += recipeSingle.price;
+      test.push(recipeSingle);
+    });
+    return test;
+  }
 }
