@@ -33,7 +33,6 @@ export class LoginPage implements OnInit {
   logForm() {
     this.buildLoginForm();
     this.setCurrentUser(this.urlUsers, this.loginForm.value.name, this.loginForm.value.password);
-
   }
   buildLoginForm() {
     this.loginForm = this.fb.group({
@@ -45,23 +44,17 @@ export class LoginPage implements OnInit {
   setCurrentUser(url: string, name: string, password: string) {
     this.userService.getAllUsers(url).subscribe(res => {
       const results = res.filter(c => c.name === name).filter(c => c.password === password)[0];
-      window.sessionStorage.setItem('currentUser', JSON.stringify(results));
-      this.checkCurrentUser();
-    });
-  }
-  checkCurrentUser() {
-    this.userInfo =  JSON.parse(window.sessionStorage.getItem('currentUser'));
-    if (this.userInfo !== null) {
-      if (this.userInfo.length === 0) {
-        alert('Invalid name or password: Please try again');
-        window.sessionStorage.clear();
-      } else {
-        this.router.navigateByUrl('tabs/restaurants').then(() => {
+      if (results !== null && results !== undefined){
+        window.sessionStorage.setItem('currentUser', JSON.stringify(results));
+		this.router.navigateByUrl('tabs/restaurants').then(() => {
           this.setRestaurants();
           this.setOrdersByUser();
         });
-      }
-    }
+      } else{
+		  alert('Invalid name or password: Please try again');
+        window.sessionStorage.clear();
+	  }
+    });
   }
   setRestaurants() {
     this.restaurantsService.getAllRestaurantJSON(this.urlRestaurants).subscribe(res => {

@@ -4,8 +4,8 @@
     <ion-title>Orders</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-card *ngFor="let order of orders" [routerLink]="['order-info']" [queryParams]="{id:order.orderId}">
+<ion-content *ngIf="orders!==null">
+  <ion-card *ngFor="let order of orders"  [routerLink]="['order-info']" [queryParams]="{id:order.orderId}">
     <ion-card-content>
 
       <ion-list lines="none">
