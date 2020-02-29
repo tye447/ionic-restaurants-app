@@ -23,10 +23,12 @@
     },
     "recipes": [
       {
+        "id": 1,
         "name": "Filet de Boeuf Sauce Poivre Noir",
         "price": 27
       },
       {
+        "id": 2,
         "name": "Filet de Cabillaud Sauce Saté",
         "price": 19
       }
@@ -62,6 +64,7 @@
     },
     "recipes": [
       {
+        "id": 1,
         "name": "Menu KAISEKI - Hiver 2020",
         "price": 45
       }
@@ -97,10 +100,12 @@
     },
     "recipes": [
       {
+        "id": 1,
         "name": "Poisson du marché, sauce curry et ses légumes hivernaux",
         "price": 24.9
       },
       {
+        "id": 2,
         "name": "Rognon de veau entier sauce morilles",
         "price": 26.9
       }
@@ -136,10 +141,12 @@
     },
     "recipes": [
       {
+        "id": 1,
         "name": "Wok - Nouilles sautées, croustillantes",
         "price": 13.9
       },
       {
+        "id": 2,
         "name": "Pho (Soupe traditionnelle vietnamienne)",
         "price": 11.9
       }
