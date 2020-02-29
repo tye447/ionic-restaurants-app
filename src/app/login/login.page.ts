@@ -23,8 +23,7 @@ export class LoginPage implements OnInit {
   constructor(public route: ActivatedRoute, private fb: FormBuilder,
               private router: Router, private userService: UserService,
               private restaurantsService: RestaurantsService,
-              private ordersService: OrdersService,
-              private recipesService: RecipesService) {}
+              private ordersService: OrdersService) {}
   ngOnInit() {
   }
   ionViewWillEnter() {
