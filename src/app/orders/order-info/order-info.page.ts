@@ -28,13 +28,11 @@ export class OrderInfoPage implements OnInit {
     const restaurants: any[] = JSON.parse(window.sessionStorage.getItem('allRestaurants'));
     this.route.queryParams.subscribe( params => {
       const orderCurrent = ordersCurrentUserTrans.filter(order => order.orderId === parseInt(params.id, 10))[0];
-      console.log(orderCurrent);
       this.orderInfo.orderDate = orderCurrent.orderDate;
       this.orderInfo.orderId = orderCurrent.orderId;
       this.orderInfo.priceTotal = orderCurrent.orderPriceTotal;
       this.orderInfo.restaurantName = orderCurrent.restaurantName;
       this.setRecipes(orderCurrent, restaurants);
-      console.log(this.orderInfo);
     });
   }
   setRecipes(order: any, restaurants: any[]) {

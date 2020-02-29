@@ -19,7 +19,6 @@ export class LoginPage implements OnInit {
   urlUsers = './assets/users.json';
   urlRestaurants = './assets/restaurants.json';
   urlOrders = './assets/orders.json';
-  urlRecipes = './assets/recipes.json';
   constructor(public route: ActivatedRoute, private fb: FormBuilder,
               private router: Router, private userService: UserService,
               private restaurantsService: RestaurantsService,
