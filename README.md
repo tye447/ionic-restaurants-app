@@ -1,8 +1,8 @@
-# Restaurants_App
+# ionic-restaurants-app
 
 ## Demo Online
 <br>
-https://tianjianye.github.io/Restaurants_App
+https://tye447.github.io/ionic-restaurants-app
 
 ## Demo
 <br>
